@@ -1,5 +1,5 @@
 import * as React from "react";
-import { I18nManager, View } from "react-native";
+import { I18nManager, View,StyleSheet } from "react-native";
 import Animated from "react-native-reanimated";
 import { PanGestureHandler, State } from "react-native-gesture-handler";
 import Ballon from "./Ballon";
@@ -52,7 +52,7 @@ type Props = {
   borderColor?: string,
   /**
    * a function that gets the current value of the slider as you slide it,
-   * and returns a string to be used inside the ballon. if not provided it will use the 
+   * and returns a string to be used inside the ballon. if not provided it will use the
    * current value as integer.
    */
   ballon?: number => string,
@@ -126,7 +126,7 @@ type Props = {
  * ...
  *
  * const textRef = useRef()
- * 
+ *
  * renderBallon=()=>(
  *  <View>
  *    <TextInput ref={textRef} />
@@ -140,7 +140,7 @@ type Props = {
  * currentTime= new Value(10)
  * playableDuration= new Value(15)
  * seekableDuration= new Value(20)
- * 
+ *
  * const slidingStart = ()=>{
  *  console.log('slide started')
  * }
@@ -334,11 +334,11 @@ class Slider extends React.Component<Props> {
           <Animated.View
             style={{
               width: "100%",
-              height: 5,
+              height: 2,
               borderRadius: 2,
               borderColor: borderColor,
               overflow: "hidden",
-              borderWidth: 1,
+              // borderWidth: StyleSheet.hairlineWidth,
               backgroundColor: maximumTrackTintColor
             }}>
             <Animated.View
@@ -370,7 +370,7 @@ class Slider extends React.Component<Props> {
               backgroundColor: minimumTrackTintColor,
               height: 15,
               width: 15,
-              borderRadius: 30
+              borderRadius: 15
             })}
           </Animated.View>
 
